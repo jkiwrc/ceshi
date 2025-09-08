@@ -1,0 +1,182 @@
+/* contact.css - 联系页面的样式 */
+
+/* 页面特定样式 */
+.content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.content h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* 施工中文字的样式 */
+.construction-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: autoPlayEffect 8s linear infinite;
+    white-space: nowrap;
+    margin: 30px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+/* 自动播放动画效果 */
+@keyframes autoPlayEffect {
+    0% {
+        transform: translateX(-100%) scale(1) rotate(0deg);
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #3498db;
+    }
+    25% {
+        transform: translateX(-50%) scale(1.2) rotate(5deg);
+        background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+        color: #0097a7;
+        text-shadow: 0 0 15px rgba(0, 151, 167, 0.8);
+    }
+    50% {
+        transform: translateX(0%) scale(1.4) rotate(0deg);
+        background: linear-gradient(135deg, #f3e5f5 0%, #ce93d8 100%);
+        color: #8e24aa;
+        text-shadow: 0 0 15px rgba(142, 36, 170, 0.8);
+    }
+    75% {
+        transform: translateX(50%) scale(1.2) rotate(-5deg);
+        background: linear-gradient(135deg, #fff3e0 0%, #ffb74d 100%);
+        color: #ef6c00;
+        text-shadow: 0 0 15px rgba(239, 108, 0, 0.8);
+    }
+    100% {
+        transform: translateX(100%) scale(1) rotate(0deg);
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #3498db;
+    }
+}
+
+/* 联系信息列表样式 */
+.content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+}
+
+.content li {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.content li:last-child {
+    border-bottom: none;
+}
+
+/* 联系表单样式 - 为将来可能添加的联系表单预留 */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 30px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .content p {
+        font-size: 1rem;
+    }
+    
+    .content li {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px;
+    }
+    
+    .content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爬虫脚本</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3348340201489722" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">设计展示</div>
+            <div class="nav-links">
+                <div><a href="home.html">前端作品</a></div>
+                <div class="active"><a href="about.html">爬虫脚本</a></div>
+                <div><a href="services.html">python深度学习</a></div>
+                <div><a href="contact.html">超能工具站</a></div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="搜索脚本...">
+                <a href="javascript:void(0);" onclick="searchScripts()"><button class="search-btn"><i class="search-icon">🔍</i></button></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="product-grid">
+                <!-- 产品卡片将由JavaScript动态生成 -->
+            </div>
+            <div class="pagination">
+                <a href="javascript:void(0);" onclick="changePage(-1)"><button>上一页</button></a>
+                <span id="page-info">第 1 页</span>
+                <a href="javascript:void(0);" onclick="changePage(1)"><button>下一页</button></a>
+            </div>
+        </div>
+        
+        <!-- 脚本详情模态框 -->
+        <div id="script-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="product-detail-container">
+                    <!-- 左侧图片区域 -->
+                    <div class="product-images">
+                        <div class="main-image-container">
+                            <div class="image-zoom-container">
+                                <img id="modal-image" src="" alt="脚本详情">
+                            </div>
+                            <div class="image-nav">
+                                <a href="javascript:void(0);" onclick="navigateImages('prev')"><button class="nav-btn prev">&#10094;</button></a>
+                                <a href="javascript:void(0);" onclick="navigateImages('next')"><button class="nav-btn next">&#10095;</button></a>
+                            </div>
+                        </div>
+                        <!-- 缩略图容器 -->
+                        <div id="thumbnails" class="thumbnail-container"></div>
+                    </div>
+                    
+                    <!-- 右侧信息区域 -->
+                    <div class="product-info">
+                        <h2 id="modal-title" class="product-title"></h2>
+                        <div class="product-meta">
+                            <span class="product-id">脚本编号: <span id="script-id-value"></span></span>
+                            <span class="product-category">类别: <span id="script-category-value"></span></span>
+                        </div>
+                        
+                        <div class="product-price">
+                            <span class="price-label">价格:</span>
+                            <span class="price-value" id="script-price"></span>
+                        </div>
+                        
+                        <div class="product-description">
+                            <h3>脚本描述</h3>
+                            <p id="modal-description"></p>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <a href="javascript:void(0);" onclick="downloadScript()"><button class="action-btn primary">下载脚本</button></a>
+                            <a href="javascript:void(0);" onclick="requestDemo()"><button class="action-btn secondary">申请演示</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script src="../js/about.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3348340201489722" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">设计展示</div>
+            <div class="nav-links">
+                <div class="active"><a href="home.html">前端作品</a></div>
+                <div><a href="about.html">爬虫脚本</a></div>
+                <div><a href="services.html">python深度学习</a></div>
+                <div><a href="contact.html">超能工具站</a></div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="搜索产品...">
+                <a href="javascript:void(0);" onclick="searchProducts()"><button class="search-btn"><i class="search-icon">🔍</i></button></a>
+            </div>
+        </div>
+        <div class="content">
+            
+            <div class="product-grid">
+                <!-- 产品卡片将由JavaScript动态生成 -->
+            </div>
+            <div class="pagination">
+                <a href="javascript:void(0);" onclick="changePage(-1)"><button>上一页</button></a>
+                <span id="page-info">第 1 页</span>
+                <a href="javascript:void(0);" onclick="changePage(1)"><button>下一页</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 产品详情模态框 -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="product-detail-container">
+                <!-- 左侧图片区域 -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <div class="image-zoom-container">
+                            <img id="modal-image" src="" alt="产品详情" onclick="openFullImage()">
+                        </div>
+                        <div class="image-nav">
+                        <a href="javascript:void(0);" onclick="changeImage(-1)"><button class="nav-btn prev">&#10094;</button></a>
+                        <a href="javascript:void(0);" onclick="changeImage(1)"><button class="nav-btn next">&#10095;</button></a>
+                    </div>
+                    </div>
+                    <div class="thumbnail-container" id="thumbnails">
+                        <!-- 缩略图将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+                
+                <!-- 右侧信息区域 -->
+                <div class="product-info">
+                    <h2 id="modal-title" class="product-title"></h2>
+                    <div class="product-meta">
+                        <span class="product-id">产品编号: <span id="product-id-value"></span></span>
+                        <span class="product-category">类别: <span id="product-category-value"></span></span>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="price-label">价格:</span>
+                        <span class="price-value" id="product-price"></span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h3>作品描述</h3>
+                        <p id="modal-description"></p>
+                    </div>
+                    
+
+                    
+                    <div class="product-actions">
+                        <a href="javascript:void(0);" onclick="downloadProduct()"><button class="action-btn primary">下载产品</button></a>
+                        <a href="javascript:void(0);" onclick="addToFavorites()"><button class="action-btn secondary">收藏</button></a>
+                        <a href="javascript:void(0);" onclick="shareProduct()"><button class="action-btn share">分享</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 全屏图片查看器 -->
+    <div id="fullscreen-viewer" class="fullscreen-viewer">
+        <span class="close" onclick="closeFullImage()">&times;</span>
+        <img id="fullscreen-image" src="" alt="全屏图片">
+    </div>
+    
+    <script src="../js/script.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>
